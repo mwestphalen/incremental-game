@@ -1,0 +1,90 @@
+  body {
+    font-size: 15pt;
+    color: white;
+    font-family: Helvetica, Arial, sans-serif;
+    background-image: url('images/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  hr {
+    background-color: white;
+    border: 0;
+    height: 1px;
+  }
+
+  /* Change upgrade blocks when the user mouses over them */
+  .upgrade-block:hover {
+    color: #0275d8;
+    /* Bootstrap primary blue */
+    cursor: pointer;
+    /* Make mouse into a finger */
+  }
+
+  .greyed-out {
+    color: grey
+  }
+
+  .can-purchase {
+    color: white
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .alert {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .alert-content {
+    background-color: white;
+    color: black;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    text-align: center;
+  }
+
+  button {
+    margin-top: 10px;
+  }
+
+
+  .image-button {
+    border: none;
+    /* Remove default button border */
+    background: none;
+    /* Remove default button background */
+    padding: 0;
+    /* Remove default padding */
+    cursor: pointer;
+    /* Change cursor to pointer on hover */
+    outline: none;
+  }
+
+  .float-left {
+    float: left;
+  }
+
+  .float-right {
+    float: right;
+  }
+
+  .small-text {
+    font-size: .85em;
+  }
+
+  #achievements {
+    height: 250px;
+  }

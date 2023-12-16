@@ -1,0 +1,225 @@
+<!doctype html>
+<html>
+
+<head>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- First row: title and main number -->
+    <div class="row mt-5">
+      <div class="col-lg-12">
+        <h1 class="text-center" style="font-weight: bold;">Cybernetic Odyssey</h1>
+        <div class="clear"></div> <!-- Required to reset float positioning -->
+
+        <!-- Alert Message for Hackers -->
+        <div id="hackerAlert" class="alert">
+          <div class="alert-content">
+            <div style="text-align: left;">Hackers have temporarily gained access to our system! Stop them from stealing
+              our data with our new Firewall upgrade...</div>
+            <button onclick="closeHackerAlert()">Close</button>
+          </div>
+        </div>
+
+        <!-- Alert Message for Final Upgrade -->
+        <div id="finalAlert" class="alert">
+          <div class="alert-content">
+            <div style="text-align: left;">Having traversed the vast expanse of the digital universe, defending against
+              countless threats, and amassing unparalleled knowledge and resources, your cybernetic entity is ready to
+              ascend. This final upgrade represents a transcendence beyond the known confines of the cybernet, merging
+              with the source code of the digital universe itself. Congrats!</div>
+            <button onclick="closeFinalAlert()">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div> <!-- /row -->
+
+
+    <!-- Second row: buttons, resources, and upgrades -->
+    <div class="row mt-5">
+
+      <!-- Number/Data packets count -->
+      <div class="col-lg-7">
+        <h2 class="float-left" style="text-align: center; font-weight: bold;"><span id="number">0</span><br>data packets
+        </h2>
+
+        <!-- Write Code Button -->
+        <div class="row">
+          <div class="col-lg-7">
+            <div class="mt-4">
+              <button button" class="image-button" id="click" onclick="changeNumber(clickIncrement, true)">
+                <img src="images/write-code-button.png" alt="Write Code Button">
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Resource counts -->
+        <div class="row">
+          <div class="col-lg-7">
+            <div class="mt-4">
+              <h2>Resources</h2>
+              <hr>
+            </div>
+            <div>
+              Code Optimizers: <span id="num-code-optimizers">0</span> <!-- Click increment -->
+            </div>
+            <div>
+              Data Compressors: <span id="num-data-compressors">0</span> <!-- Increase data collection rate -->
+            </div>
+            <div>
+              Overclocking: <span id="overclock-option">OFF</span> <!-- Increase data collection rate -->
+            </div>
+            <div>
+              AI Companions: <span id="num-ai-companions">0</span> <!-- Autoclickers -->
+            </div>
+            <div class="hidden" id="firewall">
+              Firewall Shields: <span id="num-firewall-shields">0</span> <!-- Fight against data theft -->
+            </div>
+            <div>
+              Qubits (x1000): <span id="num-quantum-bits">0</span> <!-- Increase data collection rate -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Upgrades column -->
+      <div class="col-lg-5" id="all-upgrades">
+        <h2 class="text-center">Upgrades</h2>
+        <hr>
+
+        <!-- Code Optimizers -->
+        <div class="row">
+          <div class="col-12">
+            <div class="upgrade-block greyed-out" id="upgrade1" onclick="buyCodeOptimizer()">
+              <span class="float-left">Optimize Code</span>
+              <span class="float-right" id="optimize-code-cost">30</span>
+              <div class="clear"></div> <!-- Required to reset float positioning -->
+              <br />
+              <span class="small-text">Speed up the rate of data colection per click</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Data Compressors -->
+        <div class="row">
+          <div class="col-12">
+            <div class="upgrade-block greyed-out" id="upgrade2" onclick="buyDataCompressor()">
+              <span class="float-left">Data Packet Compressor</span>
+              <span class="float-right" id="data-compressor-cost">150</span>
+              <div class="clear"></div> <!-- Required to reset float positioning -->
+              <br />
+              <span class="small-text">Increase value of each packet by enhancing storage efficiency</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- AI Companions -->
+        <div class="row">
+          <div class="col-12">
+            <div class="upgrade-block greyed-out" id="upgrade3" onclick="buyAICompanions()">
+              <span class="float-left">Build AI Model</span>
+              <span class="float-right" id="ai-companion-cost">500</span>
+              <div class="clear"></div> <!-- Required to reset float positioning -->
+              <br />
+              <span class="small-text">Automate data collection per second</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Overclocking -->
+        <div class="row">
+          <div class="col-12">
+            <div class="upgrade-block greyed-out" id="upgrade4" onclick="buyOverclock()">
+              <span class="float-left">Overclocking</span>
+              <span class="float-right" id="overclocking-cost">1000</span>
+              <div class="clear"></div> <!-- Required to reset float positioning -->
+              <br />
+              <span class="small-text">Temporary boost in data packet collection rate</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Firewall Shields -->
+        <div class="row">
+          <div class="col-12">
+            <div class="upgrade-block greyed-out hidden" id="upgrade5" onclick="buyFirewall()">
+              <span class="float-left">Firewall Shields</span>
+              <span class="float-right" id="firewall-shields-cost">800</span>
+              <div class="clear"></div> <!-- Required to reset float positioning -->
+              <br />
+              <span class="small-text">Reduce damage against cybersecurity threats by 10%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quantum Bits -->
+        <div class="row">
+          <div class="col-12">
+            <div class="upgrade-block greyed-out" id="upgrade6" onclick="buyQuantumBits()">
+              <span class="float-left">Deploy Quantum Bits</span>
+              <span class="float-right" id="quantum-bits-cost">2500</span>
+              <div class="clear"></div> <!-- Required to reset float positioning -->
+              <br />
+              <span class="small-text">Speed up your computing power with the laws of quantum mechanics</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Final Upgrade (1,000,000,000 data packets needed) -->
+        <div class="row">
+          <div class="col-12">
+            <div class="upgrade-block greyed-out hidden" id="upgrade7" onclick="buyFinalUpgrade()">
+              <span class="float-left">Byte Beyond</span>
+              <span class="float-right" id="quantum-bits-cost">1,000,000,000</span>
+              <div class="clear"></div> <!-- Required to reset float positioning -->
+              <br />
+              <span class="small-text">Embrace the endless, becoming one with the digital cosmos.</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div> <!-- /row -->
+
+    <!-- Log and achievements -->
+    <div class="row mt-5">
+      <div class="col-lg-12" id="achievements">
+        <h2 class="text-center">Achievements</h2>
+        <hr>
+      </div>
+    </div> <!-- /row -->
+
+  </div> <!-- /container -->
+
+
+  <!-- JS, Popper.js, and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+
+  <!-- JS file with page interactions -->
+  <script src="script.js"></script>
+
+</body>
+
+</html>
