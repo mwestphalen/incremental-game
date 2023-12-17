@@ -24,7 +24,8 @@ This repository hosts the Cybernetic Odyssey Incremental Game, a front-end devel
 Since this project is not being hosted in any server, it requires the user to download the files and launch it in their local machine following these steps:
 
 1. Clone the repository to your local machine.
-2. Open `index.html` in a web browser to start the game.
+2. Navigate to the project directory.
+3. Open `index.html` in a web browser to start the game.
 
 ### Usage
 
